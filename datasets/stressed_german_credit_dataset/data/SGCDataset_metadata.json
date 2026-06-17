@@ -1,0 +1,100 @@
+{
+  "bad_per_batch": 15,
+  "batch_size": 50,
+  "dataset_properties": {
+    "latent_case_unchanged": true,
+    "observational_perturbations_only": true,
+    "temporal_structure": true
+  },
+  "evaluation_protocol": {
+    "adaptation": "progressive_shocks",
+    "setup": "no_shocks",
+    "test": {
+      "seen": "F1_F2",
+      "unseen": "F4_only"
+    }
+  },
+  "f2_core_weight": 0.7,
+  "f2_field_sampling": "uniform_1_to_max",
+  "f2_max_fields": 2,
+  "f3_probability": {
+    "adaptation": 0.2,
+    "test_seen": 0.2,
+    "test_unseen": 0.0
+  },
+  "f4_policy": {
+    "adjacent_sampling": true,
+    "fields": [
+      "purpose",
+      "housing",
+      "other_installment_plans",
+      "property",
+      "job"
+    ],
+    "text_variants": [
+      "",
+      " (reported in application form)",
+      " (as indicated in document)",
+      " (recorded in submission)"
+    ]
+  },
+  "good_per_batch": 35,
+  "label_distribution": "70/30",
+  "label_map": {
+    "0": "Bad",
+    "1": "Good"
+  },
+  "numeric_noise_fields": [
+    "duration",
+    "credit_amount"
+  ],
+  "numeric_noise_probability": 0.1,
+  "phase_split": {
+    "adaptation": {
+      "bad": 150,
+      "batches": 10,
+      "good": 350
+    },
+    "setup": {
+      "bad": 60,
+      "batches": 4,
+      "good": 140
+    },
+    "test": {
+      "bad": 90,
+      "batches": 6,
+      "good": 210
+    }
+  },
+  "seed": 42,
+  "shock_constraints": {
+    "cosmetic_allowed": true,
+    "max_semantic_per_example": 1,
+    "shock_independent_of_label": true
+  },
+  "shock_probabilities": {
+    "adaptation": {
+      "A1": 0.2,
+      "A10": 0.4,
+      "A2": 0.2,
+      "A3": 0.4,
+      "A4": 0.4,
+      "A5": 0.4,
+      "A6": 0.4,
+      "A7": 0.6,
+      "A8": 0.6,
+      "A9": 0.4
+    },
+    "test_seen": {
+      "F1": 10,
+      "F2": 10,
+      "clean": 30
+    },
+    "test_unseen": {
+      "F4": 20,
+      "clean": 30
+    }
+  },
+  "total_samples": 1000,
+  "version": "SGCD-v0.1"
+}

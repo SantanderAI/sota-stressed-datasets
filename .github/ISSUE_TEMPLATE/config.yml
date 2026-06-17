@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Privacy or data-integrity concern
+    url: https://github.com/SantanderAI/sota-stressed-datasets/security/advisories/new
+    about: For privacy concerns (a record that could identify a real person) report privately via GitHub Security Advisories — see SECURITY.md. Do not open a public issue.

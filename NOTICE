@@ -1,0 +1,24 @@
+Stressed SOTA Datasets
+Copyright (c) 2026 Santander Group
+
+This collection is published and maintained by Santander AI Lab.
+
+This repository is dual-licensed (see LICENSE and LICENSE-CODE):
+  - Data and documentation: Creative Commons Attribution 4.0 International
+    (CC BY 4.0), unless a per-dataset LICENSE file declares a different license
+    (which then takes precedence for the files in that dataset's folder).
+    See LICENSE and each datasets/<name>/LICENSE.
+  - Source code (the validation scripts under .github/scripts/ and the CI
+    workflows under .github/workflows/): Apache License 2.0. See LICENSE-CODE.
+
+Each dataset is DERIVED FROM a publicly available source ("mother") dataset and
+must be attributed to BOTH the original source and Santander AI Lab.
+
+Source datasets included in this collection:
+
+  - Stressed German Credit Dataset (SGCD)
+    Derived from: Statlog (German Credit Data), UCI Machine Learning Repository
+    https://archive.ics.uci.edu/dataset/144/statlog+german+credit+data
+
+This NOTICE file is provided for attribution purposes. The CC BY 4.0 license
+text is reproduced in LICENSE.

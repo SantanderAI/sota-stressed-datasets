@@ -1,0 +1,73 @@
+# Copyright (c) 2026 Santander Group
+# SPDX-License-Identifier: Apache-2.0
+#
+# License & attribution compliance for a DATA-ONLY repository.
+# There is no source code or dependency manifest here, so instead of scanning
+# dependency licenses this workflow asserts that the required legal/attribution
+# files exist at the collection level AND inside every published dataset.
+
+name: License & attribution check
+
+on:
+  push:
+    branches: [main, development]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  attribution:
+    name: Assert license & attribution files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
+
+      - name: Collection-level legal files
+        run: |
+          set -euo pipefail
+          missing=0
+          for f in LICENSE LICENSE-CODE NOTICE CITATION.cff; do
+            if [ ! -f "$f" ]; then
+              echo "MISSING collection-level file: $f"
+              missing=$((missing + 1))
+            fi
+          done
+          if [ "$missing" -gt 0 ]; then exit 1; fi
+          echo "OK: collection-level LICENSE, NOTICE and CITATION.cff present."
+
+      - name: Per-dataset legal files
+        run: |
+          set -euo pipefail
+          missing=0
+          shopt -s nullglob
+          found_dataset=0
+          for d in datasets/*/; do
+            found_dataset=1
+            for f in LICENSE CITATION.cff README.md; do
+              if [ ! -f "$d$f" ]; then
+                echo "MISSING in $d : $f"
+                missing=$((missing + 1))
+              fi
+            done
+          done
+          if [ "$found_dataset" -eq 0 ]; then
+            echo "FAIL: no datasets found under datasets/."
+            exit 1
+          fi
+          if [ "$missing" -gt 0 ]; then
+            echo "Found $missing missing per-dataset legal file(s)."
+            exit 1
+          fi
+          echo "OK: every dataset has LICENSE, CITATION.cff and README.md."
+
+      - name: No runtime dependency manifest
+        run: |
+          set -euo pipefail
+          if [ -f requirements.txt ] || [ -f pyproject.toml ] || [ -f package.json ]; then
+            echo "FAIL: a dependency manifest was introduced into a data-only repo."
+            echo "If this is intentional, update this workflow accordingly."
+            exit 1
+          fi
+          echo "OK: repository remains data-only (no dependency manifest)."

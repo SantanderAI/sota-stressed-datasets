@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+title: "Stressed SOTA Datasets"
+message: "If you use this collection, please cite it as below and also cite the individual dataset(s) and their original sources."
+type: dataset
+version: "0.1.0"
+date-released: "2026-06-17"
+license:
+  - CC-BY-4.0
+  - Apache-2.0
+url: "https://github.com/SantanderAI/sota-stressed-datasets"
+repository-code: "https://github.com/SantanderAI/sota-stressed-datasets"
+abstract: >-
+  An open collection of well-known benchmark datasets republished in "stressed"
+  form: controlled, documented input degradation (shocks such as noise,
+  missingness, ambiguity, formatting changes and contradictions) applied to a
+  subset of records, for evaluating the robustness of machine-learning and LLM
+  systems. Each dataset is self-contained and attributes both its original
+  source and Santander AI Lab.
+authors:
+  - name: "Santander AI Lab"
+keywords:
+  - benchmark
+  - dataset
+  - machine learning
+  - robustness
+  - LLM
+  - data stress testing
+references:
+  - type: dataset
+    title: "Stressed German Credit Dataset (SGCD)"
+    version: "SGCD-v0.1"
+    authors:
+      - name: "Santander AI Lab"
+    references:
+      - type: dataset
+        title: "Statlog (German Credit Data)"
+        institution:
+          name: "UCI Machine Learning Repository"
+        url: "https://archive.ics.uci.edu/dataset/144/statlog+german+credit+data"

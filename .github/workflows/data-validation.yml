@@ -1,0 +1,33 @@
+# Copyright (c) 2026 Santander Group
+# SPDX-License-Identifier: Apache-2.0
+#
+# Structural validation of every published dataset. Runs the stdlib-only
+# validator in .github/scripts/validate_dataset.py — valid JSONL, required
+# keys, label domain, unique ids, and (when declared) record count and
+# label-distribution checks.
+
+name: Data validation
+
+on:
+  push:
+    branches: [main, development]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate dataset files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
+
+      - name: Set up Python
+        uses: actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2b  # v5.3.0
+        with:
+          python-version: "3.12"
+
+      - name: Validate datasets
+        run: python .github/scripts/validate_dataset.py

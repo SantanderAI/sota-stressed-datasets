@@ -1,0 +1,23 @@
+Stressed SOTA Datasets — Collection License
+Copyright (c) 2026 Santander Group
+
+This repository is DUAL-LICENSED:
+
+1. DATA AND DOCUMENTATION — Creative Commons Attribution 4.0 International
+   (CC BY 4.0) — https://creativecommons.org/licenses/by/4.0/legalcode
+   Applies to the dataset files under datasets/<dataset_name>/data/, the
+   metadata, codebooks, generated reports, and all Markdown documentation.
+   Each dataset is licensed under the SAME license as its mother (source)
+   dataset, declared in that dataset's own LICENSE file under
+   datasets/<dataset_name>/LICENSE; the collection default is CC BY 4.0.
+   When a dataset's source carries a different license, that dataset's local
+   LICENSE file takes precedence for the files within its folder.
+
+2. SOURCE CODE — Apache License 2.0 — see LICENSE-CODE.
+   Applies to the tooling shipped to build and validate the collection:
+   the scripts under .github/scripts/ and the CI workflows under
+   .github/workflows/. Each source file carries an SPDX header
+   (SPDX-License-Identifier: Apache-2.0).
+
+Always attribute BOTH the original source dataset AND Santander AI Lab.
+See NOTICE for attribution details.

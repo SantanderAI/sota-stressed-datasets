@@ -1,0 +1,18 @@
+# Copyright (c) 2026 Santander Group
+# SPDX-License-Identifier: Apache-2.0
+#
+# This is a data-only repository: there is no application dependency manifest
+# to track. The only moving parts are the pinned GitHub Actions in
+# .github/workflows/, so Dependabot only watches those.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+      - "ci"
+    commit-message:
+      prefix: "ci"
