@@ -1,0 +1,54 @@
+name: Data issue or correction
+description: Report a malformed record, broken file, wrong attribution, or documentation problem.
+title: "[data]: "
+labels: ["data"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve the data. **Do not** report privacy concerns here —
+        use the private channel in [SECURITY.md](../../blob/main/.github/SECURITY.md) instead.
+  - type: dropdown
+    id: dataset
+    attributes:
+      label: Dataset
+      description: Which dataset is affected?
+      options:
+        - Stressed German Credit Dataset (SGCD)
+        - Other / not sure
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Type of issue
+      options:
+        - Malformed / invalid record
+        - Broken or corrupted file
+        - Incorrect attribution or license
+        - Documentation (README / codebook / changelog)
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: records
+    attributes:
+      label: Affected record id(s)
+      description: e.g. SGCD-0123, SGCD-0456 (leave blank if not record-specific)
+      placeholder: SGCD-0123
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What is wrong, and what did you expect instead?
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Confirmation
+      options:
+        - label: This is not a privacy concern (those go through SECURITY.md).
+          required: true
+        - label: I searched existing issues and this is not a duplicate.
+          required: true

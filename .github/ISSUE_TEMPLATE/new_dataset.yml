@@ -1,0 +1,42 @@
+name: New dataset proposal
+description: Suggest a benchmark dataset to republish in stressed form.
+title: "[proposal]: "
+labels: ["proposal"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this to propose a well-known benchmark dataset that would be a good
+        candidate for a stressed variant. Proposals are reviewed by the maintainers;
+        we cannot commit to a timeline.
+  - type: input
+    id: source
+    attributes:
+      label: Source ("mother") dataset
+      description: Name and link to the original public dataset.
+      placeholder: "Statlog (German Credit Data) — https://archive.ics.uci.edu/dataset/144/..."
+    validations:
+      required: true
+  - type: input
+    id: license
+    attributes:
+      label: Source license
+      description: What license does the source dataset carry? (must allow redistribution)
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Why this dataset?
+      description: Why is it a good benchmark, and what kinds of shocks would be interesting?
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Confirmation
+      options:
+        - label: The source dataset is public and its license permits redistribution.
+          required: true
+        - label: The source dataset is already de-identified / contains no personal data.
+          required: true

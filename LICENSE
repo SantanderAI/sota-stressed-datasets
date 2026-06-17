@@ -1,0 +1,14 @@
+Stressed SOTA Datasets — Collection License
+Copyright (c) Santander AI Lab
+
+This repository is a collection of stressed datasets. Each dataset is licensed
+under the SAME license as its mother (source) dataset, declared in that
+dataset's own LICENSE file under datasets/<dataset_name>/LICENSE.
+
+Default collection license: Creative Commons Attribution 4.0 International
+(CC BY 4.0) — https://creativecommons.org/licenses/by/4.0/legalcode
+
+When a dataset's source carries a different license, that dataset's local
+LICENSE file takes precedence for the files within its folder. Always check
+the per-dataset LICENSE and attribute both the original source and
+Santander AI Lab.
