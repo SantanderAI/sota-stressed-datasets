@@ -9,7 +9,7 @@ or malformed data file, or a licensing/attribution problem.
 
 **Do not open a public GitHub issue for a privacy concern.** Instead:
 
-1. **Email**: send a detailed report to **security-opensource@gruposantander.com**
+1. **Email**: send a detailed report to **opensource@gruposantander.com**
 2. **GitHub Security Advisories**: alternatively, use [GitHub Security Advisories](../../security/advisories/new) to report privately.
 
 ### What to include
