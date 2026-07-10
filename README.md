@@ -52,3 +52,11 @@ attribution, documentation) and **new-dataset proposals** — see
 [`SECURITY.md`](.github/SECURITY.md) (report privately — do not open a public issue).
 
 Please also read our [Code of Conduct](CODE_OF_CONDUCT.md).
+
+## Disclaimer
+
+This is an open source project from the **Santander AI Lab**, provided **"as is"** under its [license](LICENSE), without warranties or conditions of any kind. It is **not an official Banco Santander product or service**, carries no commitment of production support, and does not constitute financial, legal or professional advice.
+
+"Santander" and its logo are registered trademarks of **Banco Santander, S.A.** The project license does not grant any right to use them beyond factual attribution.
+
+If you believe you have found a security vulnerability, follow our [security policy](https://github.com/SantanderAI/.github/blob/main/SECURITY.md) — do not open a public issue. You are responsible for assessing the suitability of this project for your use case and for keeping your own deployments up to date.
